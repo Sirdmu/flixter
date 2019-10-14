@@ -26,9 +26,10 @@
   </div>
 
   <ul>
-    <% current_course.sections.each do |section| %>
+    <% current_course.sections.rank(:row_order).each do |section| %>
       <li>
-        <%= section.title %>
+        <b><%= section.title %></b>
+      </li>
         <%= link_to 'New Lesson', new_instructor_section_lesson_path(section), class: 'float-right btn btn-primary btn-sm' %>
         <ul class="lessons">
           <% section.lessons.rank(:row_order).each do |lesson| %>
@@ -43,5 +44,4 @@
       </li>
     <% end %>
   </ul>
-  
 </div>

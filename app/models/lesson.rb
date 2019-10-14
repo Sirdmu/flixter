@@ -3,6 +3,6 @@ class Lesson < ApplicationRecord
   mount_uploader :video, VideoUploader
 
   include RankedModel
-  ranks :row_order, with_same: :section_id
+  ranks :row_order, with_same: :section_id, :with_same => :course_id
 
 end
