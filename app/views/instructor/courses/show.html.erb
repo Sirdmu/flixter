@@ -1,6 +1,6 @@
 <script>
   $(function() {
-    $('.lessons').sortable({});
+    $('.lessons').sortable({
       update: function( event, ui ) {
         $.ajax({
           type: 'PUT',
